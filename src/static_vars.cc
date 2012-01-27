@@ -66,6 +66,7 @@ void Static::InitStaticVars() {
   // in is caches as pointers that are sources of heap object liveness,
   // which leads to it missing some memory leaks.
   pageheap_ = new (MetaDataAlloc(sizeof(PageHeap))) PageHeap;
+  ASSERT(pageheap_ != NULL);
   DLL_Init(&sampled_objects_);
   Sampler::InitStatics();
 }
